@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dynamic Textboxes in Javascript">
+    <meta name="author" content="Rayan Antony">
+    <title>Dynamic Textboxes | Javascript</title>
+</head>
+<body>
+    <label>How many no. of textboxes?</label>
+    <input type="text" id="total_textbox">
+    <input type="button" id="submit" value="Submit" onclick="Display_DynamicTextBoxes();"><br><br>
+    <div id="dynamic_textboxes"></div>
+</body>
+</html>
+<script type="text/javascript">
+    function Display_DynamicTextBoxes(){
+        var maximum=document.getElementById('total_textbox').value;
+        if(maximum!='' && maximum!='0'){
+            var new_textboxes="";
+            for(var j=0;j<maximum;j++){
+                new_textboxes+="<label> Text Box "+(j+1)+" : </label><input type='text' id='textbox_'"+(j+1)+"><br><br>";
+            }
+            document.getElementById('dynamic_textboxes').innerHTML=new_textboxes;
+        }
+
+    }
+</script>
